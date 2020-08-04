@@ -1,6 +1,8 @@
 # Understanding Energy Consumption for Appliances
 
+The dataset for the remainder of this quiz is the Appliances Energy Prediction data. The data set is at 10 min for about 4.5 months. The house temperature and humidity conditions were monitored with a ZigBee wireless sensor network. Each wireless node transmitted the temperature and humidity conditions around 3.3 min. Then, the wireless data was averaged for 10 minutes periods. The energy data was logged every 10 minutes with m-bus energy meters. Weather from the nearest airport weather station (Chievres Airport, Belgium) was downloaded from a public data set from Reliable Prognosis (rp5.ru), and merged together with the experimental data sets using the date and time column. Two random variables have been included in the data set for testing the regression models and to filter out non predictive attributes (parameters). The attribute information can be seen below.
 
+### Attribute Information:
 There are 29 features to describe appliances energy use :
 1. date : time year-month-day hour:minute:second
 2. lights : energy use of light fixtures in the house in Wh
@@ -31,3 +33,5 @@ There are 29 features to describe appliances energy use :
 27. Rv1 :Random variable 1, non-dimensional
 28. Rv2 :Random variable 2, non-dimensional
 29. Appliances : Total energy used by appliances, in Wh
+
+### To answer some questions, you will need to normalize the dataset using the MinMaxScaler after removing the following columns: [“date”, “lights”]. The target variable is “Appliances”. Use a 70-30 train-test set split with a  random state of 42 (for reproducibility). Run a multiple linear regression using the training set and evaluate your model on the test set.
